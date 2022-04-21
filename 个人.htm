@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>mydemo</title>
+    <style type="text/css">
+        html,body {margin: 0; padding: 0;}
+        #outer {width:300px; margin:0 auto;text-align: center;}
+        #outer input {margin-bottom: 10px;}
+        #box {width:200px;height:200px;margin:0 auto; background: #000;
+            color:white;font:12px/1.5 Atoma;text-indent:2em;}
+    </style>
+    <script type="text/javascript">
+//        window.onload = function() {
+//            /* 获取输入框中的值 */
+//            var oInput = document.getElementsByTagName("input");
+//            var oBox = document.getElementById("box");
+//           此处是将获取到的输入框的值赋值，如果放在此处,oInput[2].onclick只使用html中
+//的值，所以，如果为了在后面调用方便，需要将var x和var y放在oInput[2].onclick中作为局部
+//变量存在,如正文代码所示。
+//            var x = oInput[0].value;
+//            var y = oInput[1].value;
+//            /*按键功能*/
+//                oInput[2].onclick = function() {
+//                    /* 插入元素节点的属性 */
+//                    oBox.style.cssText = x + ":" + y ;
+//                    
+//                };
+//                oInput[3].onclick = function() {
+//                    oBox.style.cssText = "";
+//                };
+//        };
+        /* 实现的只是html中的value变化，js获取和调用失败 */
+            var change = function(z1,x1,y1) {
+            z1.style[x1] = y1
+        };
+        window.onload = function() {
+            /* 获取输入框中的值 */
+            var oInput = document.getElementsByTagName("input");
+            var oBox = document.getElementById("box");
+        /*按键功能*/
+            oInput[2].onclick = function() {
+            var x = oInput[0].value;
+            var y = oInput[1].value;
+                change(oBox,x,y);
+            };
+            oInput[3].onclick = function() {
+                oBox.removeAttribute("style");
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="outer">
+    <label for="i1">属性名：</label><input type="text" id="i1" value="background"><br>
+    <label for="i2">属性值：</label><input type="text" id="i2" value="green"><br>
+    <input type="button" value="确定">
+    <input type="button" value="重置">
+    <div id="box">在上方输入框输入"属性名"及"属性值"，点击确定按钮查看效果。</div>
+    </div>
+</body>
+</html>

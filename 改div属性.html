@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        属性名：<input type="text" value="color" class="sx1">
+    </p>
+    <p>
+        属性值：<input type="text" value="red" class="sx2">
+    </p>
+    <p>
+        <button class="que">确定</button>
+        <button class="chong">重置</button>
+    </p>
+    <div class="box">
+        <p>在上方输入属性名和属性值，点击确定在盒子查看效果</p>
+    </div>
+</body>
+<script>
+    // 打开页面就开始加载
+     window.onload = function() {
+        var shu1 = document.querySelector(".sx1")
+        var shu2 = document.querySelector(".sx2")
+        var qd = document.querySelector(".que")
+        var cz = document.querySelector(".chong")
+        var box = document.querySelector(".box")
+        // 点击确定获取input框中的属性名和属性值
+        qd.onclick = function () {
+            var sxm = shu1.value
+            var sxz = shu2.value
+            // 将获取到的属性进行传参
+            change(box, sxm, sxz)
+        }
+        // 点击重置，清空样式
+        cz.onclick= function () {9
+            box.removeAttribute('style')
+        }
+        
+    }
+    // 执行接收到的属性名和属性值，进行样式修改
+    function change(box, m, z) {
+            console.log(box, m, z);
+            box.style[m] = z
+        }
+
+</script>
+
+</html>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .box {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        background-color: #000;
+        color: #fff;
+    }
+
+    p {
+        margin: 10px 0;
+    }
+</style>
