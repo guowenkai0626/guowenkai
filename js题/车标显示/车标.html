@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <h1>
+            车标展示
+        </h1>
+        <div class="box1">
+            <div class="box2">
+                <h2>车标展示 兰博基尼</h2>
+                <img src="./1.jpg" alt="">
+            </div>
+            <div class="box2">
+                <h2>车标展示 兰博基尼</h2>
+                <img src="./1.jpg" alt="">
+            </div>
+            <div class="box2">
+                <h2>车标展示 兰博基尼</h2>
+                <img src="./1.jpg" alt="">
+            </div>
+            <div class="box2">
+                <h2>车标展示 兰博基尼</h2>
+                <img src="./1.jpg" alt="">
+            </div>
+            <div class="box2">
+                <h2>车标展示 兰博基尼</h2>
+                <img src="./1.jpg" alt="">
+            </div>
+            <div class="box2">
+                <h2>车标展示 兰博基尼</h2>
+                <img src="./1.jpg" alt="">
+            </div>
+            <div class="box2">
+                <h2>车标展示 兰博基尼</h2>
+                <img src="./1.jpg" alt="">
+            </div>
+            <div class="box2">
+                <h2>车标展示 兰博基尼</h2>
+                <img src="./1.jpg" alt="">
+            </div>
+
+
+
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        var txt = document.querySelectorAll('h2')
+        var img = document.querySelectorAll('img')
+        var box2 = document.querySelectorAll('.box2')
+        for (let i = 0; i < box2.length; i++) {
+           box2[i].onmouseover=function () {
+               console.log(123);
+               img[i].style.display="block"
+               txt[i].style.display="none"
+           }
+           box2[i].onmouseout=function () {
+               console.log(123);
+               img[i].style.display="none"
+               txt[i].style.display="block"
+           }
+        }
+    }
+
+
+
+</script>
+
+</html>
+<style>
+    .box {
+        width: 600px;
+        height: 300px;
+        border: 1px solid #000;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .box1 {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .box2 {
+        width: 20%;
+        height: 90px;
+        border: 1px solid #000;
+        margin: 10px 0;
+    }
+
+    .box2 img {
+        width: 100px; height: 100px;
+        display: none;
+    }
+</style>

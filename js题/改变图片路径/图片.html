@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <div class="big">
+            <img src="./image/big_1.jpg" alt="">
+        </div>
+        <img src="./image/small_1.jpg" alt="">
+        <img src="./image/small_2.jpg" alt="">
+        <img src="./image/small_3.jpg" alt="">
+        <img src="./image/small_4.jpg" alt="">
+        <img src="./image/small_5.jpg" alt="">
+        <img src="./image/small_6.jpg" alt="">
+        <img src="./image/small_7.jpg" alt="">
+        <img src="./image/small_8.jpg" alt="">
+        <img src="./image/small_9.jpg" alt="">
+        <img src="./image/small_10.jpg" alt="">
+        <img src="./image/small_11.jpg" alt="">
+    </div>
+</body>
+<script>
+    window.onload = function(){
+        var img =document.querySelectorAll('img')
+
+        for (let i = 1; i < img.length; i++) {
+            img[i].index =i
+            img[i].onmouseover=function (){
+                // console.log(index);
+                img[0].src="./image/big_"+this.index+".jpg"
+            }
+        }
+    }
+</script>
+</html>
+<style>
+    .box {
+        width: 260px;
+        height: 320px;
+        border: 1px solid #000;
+        border-radius:20px;
+        margin: 0 auto;
+        padding: 10px;
+        /* display:flex; */
+        overflow: hidden;
+    }
+    .box .big{
+        width: 200px;
+        height: 200px;
+        float: left;
+    }
+    .box img{
+        float: right;
+        margin: 5px;
+    }
+    .big img{
+        width: 92%;
+        height: 92%;
+        /* margin: 10px; */
+    }
+</style>

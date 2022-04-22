@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <p><input type="checkbox" class="qx">全选 <span class="spa"> 反选</span></p>
+        <ul>
+            <li><input type="checkbox" class="fx"> 选项（1）</li>
+            <li><input type="checkbox" class="fx"> 选项（2）</li>
+            <li><input type="checkbox" class="fx"> 选项（3）</li>
+            <li><input type="checkbox" class="fx"> 选项（4）</li>
+            <li><input type="checkbox" class="fx"> 选项（5）</li>
+            <li><input type="checkbox" class="fx"> 选项（6）</li>
+            <li><input type="checkbox" class="fx"> 选项（7）</li>
+            <li><input type="checkbox" class="fx"> 选项（8）</li>
+        </ul>
+    </div>
+</body>
+<script>
+    window.onload = function() {
+        var qx=document.querySelector(".qx")
+        var fx= document.querySelectorAll('.fx')
+        var spn=document.querySelector(".spa")
+        qx.onclick = function () {
+            console.log(this.checked);
+            for (let i = 0; i < fx.length; i++) {
+                console.log(fx[i].checked);
+                fx[i].checked=this.checked
+            }
+        }
+        for (let j = 0; j < fx.length; j++) {
+            fx[j].onclick = function () {
+               var che=true
+                for (let i = 0; i < fx.length; i++) {
+                   if(fx[i].checked==false){
+                       che=false
+                   }
+                   qx.checked=che
+                }
+            }
+            
+        }
+        spn.onclick=function () {
+            for (let i = 0; i < fx.length; i++) {
+                console.log( fx[i].checked)
+                fx[i].checked=!fx[i].checked
+                var che=true
+                for (let i = 0; i < fx.length; i++) {
+                   if(fx[i].checked==false){
+                       che=false
+                   }
+                   qx.checked=che
+                }
+            }
+        }
+    }
+</script>
+</html>
+<style>
+    .box{
+        width: 200px;
+        border: 1px solid #000;
+        border-radius:20px;
+        text-align: center;
+    }
+    ul li{
+        list-style: none;
+    }
+</style>
