@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="min_w">
+        <div class="min"></div>
+    </div>
+    <div class="left"> </div>
+    <div class="rigth"> </div>
+</body>
+</html>
+<style>
+    .left, .rigth, .min {
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+    }
+    .min_w{
+        float: left;
+        width: 100%;
+    }
+    .min{
+        margin: 0 110px;
+        background:black;
+        color:white;
+    }
+    .left, .rigth{
+        float: left;
+        width: 100px;
+        margin-left: -100%;
+        background:green;
+    }
+    .rigth{
+        margin-left: -100px;
+    }
+</style>

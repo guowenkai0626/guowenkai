@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>猜题</h1>
+</body>
+
+</html>
+<script>
+  function foo() {
+    getName = function () { alert(1) }
+    return this;
+  }
+
+  foo.getName = function () { alert(2) }   
+  foo.prototype.getName = function () { alert(3) }
+  var getName = function () { alert(4) }
+  function getName() { alert(5) }
+
+
+  //  输出结果
+  foo.getName()  //2        
+  getName()     //4        
+  foo().getName() //1             
+  getName()  //               1 
+  new foo.getName() //2            
+  new foo().getName()//3         
+  new new foo().getName()//3    
+
+console.log(new foo);
+</script>
